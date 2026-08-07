@@ -12,7 +12,10 @@ not try to understand what changed. It tells you which page moved, and a human
 reads that page and updates the YAML. That is the only part that needs judgment
 and it is the part that stays manual on purpose.
 
-Exit codes: 0 nothing changed, 1 something changed, 2 a source is unreachable.
+Exit codes: 0 nothing changed, 1 something changed, 2 nothing changed but a
+source could not be fetched. Only 1 is worth waking someone for. Some of these
+hosts, nacha.org among them, refuse requests from CI runners while serving a
+browser or a laptop normally, so 2 is routine rather than a fault.
 
 usage: python3 scripts/check_sources.py [--update]
 """
@@ -117,9 +120,11 @@ def main():
     if not changed and not unreachable:
         print(f"{len(current)} sources checked, none changed")
 
-    if unreachable:
-        return 2
-    return 1 if changed else 0
+    # A real change outranks an unreachable source. Getting this backwards meant
+    # one bot-blocked host masked every genuine change behind exit 2.
+    if changed:
+        return 1
+    return 2 if unreachable else 0
 
 
 if __name__ == "__main__":
