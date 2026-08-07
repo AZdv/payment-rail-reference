@@ -1,0 +1,79 @@
+{
+ "https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter": {
+  "chars": 13826,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "1cef4d3d0a44d935aa03492a3836c440a4bb61d618f394ba46af238fea39c352"
+ },
+ "https://www.frbservices.org/financial-services/wires": {
+  "chars": 11026,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "5725a8744c58599dc5a53385475098b86a1286e942c787f78401b6f8c8a28223"
+ },
+ "https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase": {
+  "chars": 10449,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "2fb08dd28798dc345a3345bbbbfc19d1bd5e339cf052abee07fe128855efb82e"
+ },
+ "https://www.frbservices.org/resources/financial-services/fednow/operating-hours": {
+  "chars": 11172,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "c7b5d39c3025f9a43889ac797ad195bae3ddb940a889e9df5752424c10d4d61f"
+ },
+ "https://www.frbservices.org/resources/financial-services/wires/faq/iso-20022/overview-implementation-details": {
+  "chars": 18149,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "5f9926003edfabd3e420d1187205823cf674a10a59f49b3c43d2aa60f360bf3c"
+ },
+ "https://www.frbservices.org/resources/financial-services/wires/operating-hours.html": {
+  "chars": 19757,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "357a334a7bff274c54be6c71c76439ae14c1b0cf02152f70ecca42103a247a6c"
+ },
+ "https://www.frbservices.org/resources/resource-centers/same-day-ach/fedach-processing-schedule.html": {
+  "chars": 11962,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "34db979051459b001e8d4fd404b0793d15e4195f1e4a097be362680d82bc8d19"
+ },
+ "https://www.nacha.org/million": {
+  "chars": 9109,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "85dd298837dde70049095fe642de71892e4540f5b04fe3b9980dcc43fed3809f"
+ },
+ "https://www.nacha.org/rules/increasing-same-day-ach-dollar-limit-10-million-0": {
+  "chars": 11216,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "eb9009134612dc963bda3efcb3a684a86404cd361bb6a9346201ea1c449a495f"
+ },
+ "https://www.theclearinghouse.org/payment-systems/Articles/2024/12/Higher_10_Million_RTP_Network_Transaction_Limit_Empowers_New_Uses_12-04-2024": {
+  "chars": 5313,
+  "rails": [
+   "rtp"
+  ],
+  "sha256": "9857dc9b6c04077534eef06794528b06847fd3dd95623b608050998e5d63a15f"
+ },
+ "https://www.theclearinghouse.org/payment-systems/rtp": {
+  "chars": 7266,
+  "rails": [
+   "rtp"
+  ],
+  "sha256": "644be4eeedacf5fff433448c706144da3049482ce8fd1cd17ec0e9261e5c611d"
+ }
+}

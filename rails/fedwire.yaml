@@ -1,0 +1,35 @@
+rail: fedwire
+display_name: Fedwire Funds Service
+operator: Federal Reserve Financial Services
+jurisdiction: US
+type: rtgs
+
+facts:
+  operating_hours:
+    opens_et: "21:00"
+    opens_on: preceding calendar day
+    customer_transfer_cutoff_et: "18:45"
+    bank_transfer_cutoff_et: "19:00"
+    closes_et: "19:00"
+    business_days_only: true
+    note: >-
+      Closed Saturdays, Sundays and Federal Reserve Bank holidays. Online
+      nonvalue messages begin at 20:35 ET on the preceding calendar day.
+    status: verified
+    source: https://www.frbservices.org/resources/financial-services/wires/operating-hours.html
+    verified_on: 2026-08-07
+
+  message_standard:
+    value: ISO 20022
+    migration_completed: 2025-07-14
+    status: verified
+    source: https://www.frbservices.org/resources/financial-services/wires/faq/iso-20022/overview-implementation-details
+    verified_on: 2026-08-07
+
+gaps:
+  - field: per_transaction_value_limit
+    reason: >-
+      No per-transaction value limit is stated on the public FRFS pages reviewed.
+      That is not the same as confirming there is none, so it is recorded as
+      unknown rather than as "no limit".
+    searched: https://www.frbservices.org/financial-services/wires

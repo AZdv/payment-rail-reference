@@ -1,0 +1,46 @@
+rail: fednow
+display_name: FedNow Service
+operator: Federal Reserve Financial Services
+jurisdiction: US
+type: instant
+
+facts:
+  network_transaction_limit:
+    value_usd: 10000000
+    effective_from: 2025-11-12
+    supersedes:
+      value_usd: 1000000
+    participant_may_set_lower: true
+    note: >-
+      Financial institutions retain flexibility to set lower transaction limits
+      based on internal risk parameters. The number that matters for a given
+      integration is the sending institution's configured limit, not this one.
+    status: verified
+    source: https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase
+    verified_on: 2026-08-07
+
+  operating_hours:
+    value: 24x7x365
+    note: >-
+      The instant payment message business day rolls at approximately 7:01 p.m. ET.
+    status: verified
+    source: https://www.frbservices.org/resources/financial-services/fednow/operating-hours
+    verified_on: 2026-08-07
+
+  message_standard:
+    value: ISO 20022
+    version: null
+    status: verified_partial
+    note: >-
+      The public FRFS pages reviewed state ISO 20022 but do not state a specific
+      message set version. Recorded as unknown rather than guessed.
+    source: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
+    verified_on: 2026-08-07
+
+gaps:
+  - field: launch_date
+    reason: Not confirmed against a primary FRFS source during this pass.
+  - field: participant_count
+    reason: >-
+      FRFS publishes a participant list rather than a count, and any figure here
+      would be stale within weeks. Read the list instead.

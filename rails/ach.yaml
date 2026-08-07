@@ -1,0 +1,45 @@
+rail: ach
+display_name: ACH (Automated Clearing House)
+operator: Nacha (rules), FedACH and EPN (operators)
+jurisdiction: US
+type: batch
+
+facts:
+  same_day_transaction_limit:
+    value_usd: 1000000
+    effective_from: 2022-03-18
+    status: verified
+    source: https://www.nacha.org/million
+    verified_on: 2026-08-07
+
+  same_day_transaction_limit_announced_increase:
+    value_usd: 10000000
+    effective_from: 2027-09-17
+    status: verified
+    note: >-
+      Announced, not yet in force. Anything designed against the current
+      $1,000,000 ceiling has a known expiry.
+    source: https://www.nacha.org/rules/increasing-same-day-ach-dollar-limit-10-million-0
+    verified_on: 2026-08-07
+
+  same_day_settlement_windows:
+    value: 3
+    fedach_submission_deadlines_et:
+      - "10:30"
+      - "14:45"
+      - "16:45"
+    status: verified
+    note: >-
+      Deadlines are the FedACH schedule. An originating institution's own cutoff
+      is earlier, often by hours, and that is the one that breaks your launch.
+    source: https://www.frbservices.org/resources/resource-centers/same-day-ach/fedach-processing-schedule.html
+    verified_on: 2026-08-07
+
+gaps:
+  - field: standard_ach_transaction_limit
+    reason: >-
+      Widely repeated as "no per-transaction limit", but no primary Nacha or FRFS
+      page reviewed states that explicitly. Recorded as unverified rather than
+      asserted. If you need this for a design decision, read the Nacha Operating
+      Rules directly or ask your ODFI in writing.
+    searched: https://www.nacha.org/million

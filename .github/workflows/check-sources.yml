@@ -1,0 +1,55 @@
+name: check sources
+
+# Monthly, plus on demand. It opens an issue only when a source page actually
+# changed, so a quiet month is silent. An alert that fires every run is an
+# alert nobody reads.
+on:
+  schedule:
+    - cron: '0 8 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Re-fetch every source URL
+        id: check
+        run: |
+          set +e
+          python3 scripts/check_sources.py > report.txt 2>&1
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat report.txt
+
+      - name: Open an issue if something moved
+        if: steps.check.outputs.code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs')
+            const report = fs.readFileSync('report.txt', 'utf8')
+            const today = new Date().toISOString().slice(0, 10)
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Source pages changed, review needed (${today})`,
+              labels: ['source-drift'],
+              body: [
+                'A monthly check found that at least one source page changed since the',
+                'last baseline. The checker does not interpret the change. Read each page',
+                'below, update the matching fact in `rails/`, bump its `verified_on`, then',
+                'run `python3 scripts/check_sources.py --update` and commit the new hashes.',
+                '',
+                '```',
+                report.trim(),
+                '```',
+              ].join('\n'),
+            })
