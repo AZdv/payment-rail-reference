@@ -14,7 +14,7 @@ The FedNow limit is the clearest example. It was $1,000,000 until 12 November
 2025 and is $10,000,000 now. There is a large amount of published material,
 including material dated 2026, still quoting the old figure or the original
 launch ceilings. Ask an assistant and you will often get one of those numbers
-back, because that is what the corpus says.
+back, because that is what most of the published material still says.
 
 We got this wrong on our own site once. That is most of the reason this repo
 exists.
@@ -109,9 +109,6 @@ a vendor comparison, the licence asks that the source comes with it.
 
 ## Who maintains it
 
-[AZdev](https://azdv.co/). We do fractional and interim CTO/CIO work for FinTech,
-payments, and AI in regulated finance, which is how we ended up caring about
+[AZdev](https://azdv.co/). We get called in when a payments integration is late
+or a sponsor bank has started asking questions, which is how we ended up caring
 whether these numbers are right.
-
-Related writing: [FedNow vs RTP](https://azdv.co/blog/2026/04/fednow-vs-rtp-comparison/)
-and [reconciliation and ledger architecture before launch](https://azdv.co/blog/2026/05/reconciliation-ledger-architecture-before-launch/).
