@@ -6,6 +6,7 @@ type: instant
 
 facts:
   network_transaction_limit:
+    # Customer credit transfers and payment returns.
     value_usd: 10000000
     effective_from: 2025-11-12
     supersedes:
@@ -16,8 +17,24 @@ facts:
       based on internal risk parameters. The number that matters for a given
       integration is the sending institution's configured limit, not this one.
     status: verified
-    source: https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase
-    verified_on: 2026-08-07
+    # The 2025-09-05 press release announcing this says only "November 2025".
+    # This customer communication is the source that states the day, and the day
+    # is what a dated record is for.
+    source: https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase
+    verified_on: 2026-08-10
+
+  liquidity_management_transfer_limit:
+    # Recorded separately because the previous ceiling was NOT the same. Folding
+    # both into one figure told anyone debugging a pre-November LMT that the old
+    # limit was $1M when it was $2.5M, which is the exact error `supersedes`
+    # exists to prevent.
+    value_usd: 10000000
+    effective_from: 2025-11-12
+    supersedes:
+      value_usd: 2500000
+    status: verified
+    source: https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase
+    verified_on: 2026-08-10
 
   operating_hours:
     value: 24x7x365
@@ -38,8 +55,6 @@ facts:
     verified_on: 2026-08-07
 
 gaps:
-  - field: launch_date
-    reason: Not confirmed against a primary FRFS source during this pass.
   - field: participant_count
     reason: >-
       FRFS publishes a participant list rather than a count, and any figure here

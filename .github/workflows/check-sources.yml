@@ -21,8 +21,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      # Some sources block CI runner IPs while serving browsers normally, so a
-      # local run and a CI run legitimately disagree about reachability.
+      # A local run and a CI run can legitimately disagree about reachability:
+      # some hosts answer a laptop and refuse a runner IP.
       - name: Re-fetch every source URL
         id: check
         run: |
@@ -32,8 +32,8 @@ jobs:
           cat report.txt
 
       - name: Open an issue if something moved
-        # Only a real change. Exit 2 means a host refused the runner, which
-        # happens every run for nacha.org and is not worth an issue.
+        # Only a real change. Exit 2 means nothing changed but a host could not
+        # be fetched, observed once for nacha.org from a runner on 2026-08-07.
         if: steps.check.outputs.code == '1'
         uses: actions/github-script@v7
         with:

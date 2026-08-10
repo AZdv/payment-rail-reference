@@ -19,6 +19,22 @@ facts:
     source: https://www.frbservices.org/resources/financial-services/wires/operating-hours.html
     verified_on: 2026-08-07
 
+  operating_days_announced_change:
+    # Recorded for the same reason the 2027 Same Day ACH increase is: anything
+    # designed against the current business-days-only assumption has a known
+    # expiry. Leaving it out while recording the ACH one was inconsistent.
+    change: Sunday through Friday, including weekday holidays
+    supersedes: Monday through Friday, business days only
+    daily_hours_unchanged: 22
+    effective_from: null
+    effective_note: >-
+      No earlier than 2028. The Board says implementation will come no earlier
+      than 2028 to allow operational and industry readiness, and has not given a
+      date, so this is recorded without one rather than with a guess.
+    status: verified
+    source: https://www.federalreserve.gov/newsevents/pressreleases/other20251009a.htm
+    verified_on: 2026-08-10
+
   message_standard:
     value: ISO 20022
     migration_completed: 2025-07-14

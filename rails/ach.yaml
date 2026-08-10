@@ -42,4 +42,11 @@ gaps:
       page reviewed states that explicitly. Recorded as unverified rather than
       asserted. If you need this for a design decision, read the Nacha Operating
       Rules directly or ask your ODFI in writing.
+    narrowed_by: >-
+      Nacha does state, on the page below, that entries over $1,000,000
+      submitted to a same-day window "will not be rejected by the ACH Operator,
+      but will be processed for next-day settlement in the next available
+      processing window". So standard ACH demonstrably accepts entries above the
+      same-day cap. That is short of establishing no limit at all, so the gap
+      stands, but it is the closest primary sentence found.
     searched: https://www.nacha.org/million

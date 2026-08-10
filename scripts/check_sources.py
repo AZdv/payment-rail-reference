@@ -13,9 +13,11 @@ reads that page and updates the YAML. That is the only part that needs judgment
 and it is the part that stays manual on purpose.
 
 Exit codes: 0 nothing changed, 1 something changed, 2 nothing changed but a
-source could not be fetched. Only 1 is worth waking someone for. Some of these
-hosts, nacha.org among them, refuse requests from CI runners while serving a
-browser or a laptop normally, so 2 is routine rather than a fault.
+source could not be fetched. Only 1 is worth waking someone for. Exit 2 is not
+necessarily a fault: on the CI run of 2026-08-07, nacha.org was UNREACHABLE from
+a GitHub Actions runner while serving this machine normally the same hour. That
+is one observation, not a rule, so treat a repeated exit 2 for the same host as
+worth a look rather than as expected noise.
 
 usage: python3 scripts/check_sources.py [--update]
 """
