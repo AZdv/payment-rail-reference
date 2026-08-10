@@ -1,4 +1,11 @@
 {
+ "https://www.federalreserve.gov/newsevents/pressreleases/other20251009a.htm": {
+  "chars": 10682,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "7dc1c66586af47f7e1191864c017b00e70419da9461d8036d25f54021ebeae61"
+ },
  "https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter": {
   "chars": 13826,
   "rails": [
@@ -13,12 +20,12 @@
   ],
   "sha256": "5725a8744c58599dc5a53385475098b86a1286e942c787f78401b6f8c8a28223"
  },
- "https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase": {
-  "chars": 10449,
+ "https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase": {
+  "chars": 7800,
   "rails": [
    "fednow"
   ],
-  "sha256": "2fb08dd28798dc345a3345bbbbfc19d1bd5e339cf052abee07fe128855efb82e"
+  "sha256": "5a426a32e718bad129a7e88dc68afc1caee6b69504b660c8b2c70b550abe3d2f"
  },
  "https://www.frbservices.org/resources/financial-services/fednow/operating-hours": {
   "chars": 11172,
@@ -70,10 +77,10 @@
   "sha256": "9857dc9b6c04077534eef06794528b06847fd3dd95623b608050998e5d63a15f"
  },
  "https://www.theclearinghouse.org/payment-systems/rtp": {
-  "chars": 7266,
+  "chars": 7268,
   "rails": [
    "rtp"
   ],
-  "sha256": "644be4eeedacf5fff433448c706144da3049482ce8fd1cd17ec0e9261e5c611d"
+  "sha256": "8179d4f9c686e419d4ce4833e61fca471583e9efffe5928fba1f2f80999fdbf2"
  }
 }

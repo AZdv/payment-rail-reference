@@ -31,9 +31,16 @@ jobs:
           echo "code=$?" >> "$GITHUB_OUTPUT"
           cat report.txt
 
+      - name: Fail the build if the baseline is unusable
+        if: steps.check.outputs.code == '3'
+        run: |
+          echo "state file missing, empty or corrupt - monitoring is OFF" >&2
+          exit 1
+
       - name: Open an issue if something moved
-        # Only a real change. Exit 2 means nothing changed but a host could not
-        # be fetched, observed once for nacha.org from a runner on 2026-08-07.
+        # Exit 1 means a source changed or is GONE (404). Exit 2 means nothing
+        # changed but a host could not be fetched, observed once for nacha.org
+        # from a runner on 2026-08-07. Exit 3 means the state file is unusable.
         if: steps.check.outputs.code == '1'
         uses: actions/github-script@v7
         with:
