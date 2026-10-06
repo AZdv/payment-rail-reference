@@ -33,14 +33,18 @@ facts:
     verified_on: 2026-10-06
 
   participants:
-    value: 1322
+    value: 1378
     qualifier: "over"
-    as_of: 2026-07
+    as_of: 2026-09
+    supersedes:
+      value: 1322
+      as_of: 2026-07
     status: verified
     note: >-
       Operator-stated and moves faster than this file does. It was 1,280 as of
-      June 2026 and 1,322 a month later, so the monthly source check will always
-      report this one late. Treat it as an order of magnitude, and read the
-      operator page if the exact number matters.
+      June 2026, 1,322 as of July 2026 and 1,378 as of September 2026, so the
+      monthly source check will always report this one late. Treat it as an
+      order of magnitude, and read the operator page if the exact number
+      matters.
     source: https://www.theclearinghouse.org/payment-systems/rtp
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
