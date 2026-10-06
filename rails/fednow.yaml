@@ -41,8 +41,9 @@ facts:
     note: >-
       The instant payment message business day rolls at approximately 7:01 p.m. ET.
     status: verified
-    source: https://www.frbservices.org/resources/financial-services/fednow/operating-hours
-    verified_on: 2026-08-07
+    # URL updated 2026-10-06; the old /fednow/operating-hours path 301s here.
+    source: https://www.frbservices.org/resources/financial-services/fednow-service-resources/fednow-service-operating-hours/
+    verified_on: 2026-10-06
 
   message_standard:
     value: ISO 20022
@@ -51,8 +52,10 @@ facts:
     note: >-
       The public FRFS pages reviewed state ISO 20022 but do not state a specific
       message set version. Recorded as unknown rather than guessed.
-    source: https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter
-    verified_on: 2026-08-07
+    # URL updated 2026-10-06; the old /what-is-iso-20022-why-does-it-matter
+    # path 301s here.
+    source: https://www.frbservices.org/financial-services/fednow-service/iso-20022-why-does-it-matter/
+    verified_on: 2026-10-06
 
 gaps:
   - field: participant_count

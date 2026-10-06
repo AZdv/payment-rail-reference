@@ -10,7 +10,7 @@ facts:
     effective_from: 2022-03-18
     status: verified
     source: https://www.nacha.org/million
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
 
   same_day_transaction_limit_announced_increase:
     value_usd: 10000000
@@ -20,7 +20,7 @@ facts:
       Announced, not yet in force. Anything designed against the current
       $1,000,000 ceiling has a known expiry.
     source: https://www.nacha.org/rules/increasing-same-day-ach-dollar-limit-10-million-0
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
 
   same_day_settlement_windows:
     value: 3
@@ -32,8 +32,12 @@ facts:
     note: >-
       Deadlines are the FedACH schedule. An originating institution's own cutoff
       is earlier, often by hours, and that is the one that breaks your launch.
-    source: https://www.frbservices.org/resources/resource-centers/same-day-ach/fedach-processing-schedule.html
-    verified_on: 2026-08-07
+    # URL updated 2026-10-06. FRFS restructured frbservices.org and the old
+    # /resources/resource-centers/same-day-ach/fedach-processing-schedule.html
+    # path now 301s here. The table itself is unchanged and still carries
+    # "effective September 12, 2022".
+    source: https://www.frbservices.org/resources/resource-centers/same-day-ach-resource-center/fedach-processing-schedule/
+    verified_on: 2026-10-06
 
 gaps:
   - field: standard_ach_transaction_limit

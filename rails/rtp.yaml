@@ -16,21 +16,21 @@ facts:
       Quoted from the operator: "The new $10 million individual transaction limit
       will be effective February 9, 2025."
     source: https://www.theclearinghouse.org/payment-systems/Articles/2024/12/Higher_10_Million_RTP_Network_Transaction_Limit_Empowers_New_Uses_12-04-2024
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
 
   operating_hours:
     value: 24x7x365
     note: Includes bank holidays, weekends and after hours.
     status: verified
     source: https://www.theclearinghouse.org/payment-systems/rtp
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
 
   message_standard:
     value: ISO 20022
     version: null
     status: verified_partial
     source: https://www.theclearinghouse.org/payment-systems/rtp
-    verified_on: 2026-08-07
+    verified_on: 2026-10-06
 
   participants:
     value: 1322

@@ -16,8 +16,10 @@ facts:
       Closed Saturdays, Sundays and Federal Reserve Bank holidays. Online
       nonvalue messages begin at 20:35 ET on the preceding calendar day.
     status: verified
-    source: https://www.frbservices.org/resources/financial-services/wires/operating-hours.html
-    verified_on: 2026-08-07
+    # URL updated 2026-10-06; the old /wires/operating-hours.html path 301s
+    # here. Every figure in this block re-read on the new page and unchanged.
+    source: https://www.frbservices.org/resources/financial-services/wires/fedwire-funds-service-national-settlement-service-operating-hours/
+    verified_on: 2026-10-06
 
   operating_days_announced_change:
     # Recorded for the same reason the 2027 Same Day ACH increase is: anything
@@ -33,7 +35,7 @@ facts:
       date, so this is recorded without one rather than with a guess.
     status: verified
     source: https://www.federalreserve.gov/newsevents/pressreleases/other20251009a.htm
-    verified_on: 2026-08-10
+    verified_on: 2026-10-06
 
   message_standard:
     value: ISO 20022
@@ -48,4 +50,4 @@ gaps:
       No per-transaction value limit is stated on the public FRFS pages reviewed.
       That is not the same as confirming there is none, so it is recorded as
       unknown rather than as "no limit".
-    searched: https://www.frbservices.org/financial-services/wires
+    searched: https://www.frbservices.org/financial-services/fedwire-funds-service/
