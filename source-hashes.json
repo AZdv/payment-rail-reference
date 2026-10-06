@@ -6,68 +6,110 @@
   ],
   "sha256": "7dc1c66586af47f7e1191864c017b00e70419da9461d8036d25f54021ebeae61"
  },
- "https://www.frbservices.org/financial-services/fednow/what-is-iso-20022-why-does-it-matter": {
-  "chars": 13826,
-  "rails": [
-   "fednow"
-  ],
-  "sha256": "1cef4d3d0a44d935aa03492a3836c440a4bb61d618f394ba46af238fea39c352"
- },
- "https://www.frbservices.org/financial-services/wires": {
-  "chars": 11026,
+ "https://www.federalreserve.gov/paymentsystems/fedfunds_about.htm": {
+  "chars": 10021,
   "rails": [
    "fedwire"
   ],
-  "sha256": "5725a8744c58599dc5a53385475098b86a1286e942c787f78401b6f8c8a28223"
+  "sha256": "2c4b0134747b2e306b05f660c7701677085220020e16653ac99d73afe087cc75"
  },
- "https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase": {
-  "chars": 7800,
+ "https://www.frbservices.org/financial-services/fednow-service/iso-20022-why-does-it-matter/": {
+  "chars": 13327,
   "rails": [
    "fednow"
   ],
-  "sha256": "5a426a32e718bad129a7e88dc68afc1caee6b69504b660c8b2c70b550abe3d2f"
+  "sha256": "1945f3eafbbb1666630cc5f796bf7d7b6bf6cd3e94ada74a58550f209ef52682"
  },
- "https://www.frbservices.org/resources/financial-services/fednow/operating-hours": {
-  "chars": 11172,
+ "https://www.frbservices.org/financial-services/fedwire-funds-service/": {
+  "chars": 10886,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "4842155206ed0caccfa1ff3ba3d80963ae751d79414727900c9f0051c7ab9710"
+ },
+ "https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase/": {
+  "chars": 12260,
   "rails": [
    "fednow"
   ],
-  "sha256": "c7b5d39c3025f9a43889ac797ad195bae3ddb940a889e9df5752424c10d4d61f"
+  "sha256": "6887053a353df679d6e81b255ee5e3027f86d2ed6befcb54f48a9d56e77edecc"
  },
- "https://www.frbservices.org/resources/financial-services/wires/faq/iso-20022/overview-implementation-details": {
-  "chars": 18149,
-  "rails": [
-   "fedwire"
-  ],
-  "sha256": "5f9926003edfabd3e420d1187205823cf674a10a59f49b3c43d2aa60f360bf3c"
- },
- "https://www.frbservices.org/resources/financial-services/wires/operating-hours.html": {
-  "chars": 19757,
-  "rails": [
-   "fedwire"
-  ],
-  "sha256": "357a334a7bff274c54be6c71c76439ae14c1b0cf02152f70ecca42103a247a6c"
- },
- "https://www.frbservices.org/resources/resource-centers/same-day-ach/fedach-processing-schedule.html": {
-  "chars": 11962,
+ "https://www.frbservices.org/resources/financial-services/fedach-services-resources/ach-faq/same-day-ach-sample-scenarios-effective-march-18-2022/": {
+  "chars": 17620,
   "rails": [
    "ach"
   ],
-  "sha256": "34db979051459b001e8d4fd404b0793d15e4195f1e4a097be362680d82bc8d19"
+  "sha256": "94ae17b52be006a9153d982e45f364083a9432ea00e19196cfd89c223e552a1f"
+ },
+ "https://www.frbservices.org/resources/financial-services/fednow-service-resources/fednow-service-operating-hours/": {
+  "chars": 11609,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "d637e20908a383de611fd6beda31f6bb0f53e64b84cbefeaca77a60eccb36813"
+ },
+ "https://www.frbservices.org/resources/financial-services/wires/fedwire-funds-service-national-settlement-service-operating-hours/": {
+  "chars": 20320,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "afed25686f284211d71a6ee71836dccdcefcedfdc3e236742cc11812db019b38"
+ },
+ "https://www.frbservices.org/resources/financial-services/wires/fedwire-services-frequently-asked-questions/fedwire-service-iso-20022-faq/format-faq/": {
+  "chars": 49731,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "b4ce65ac5171ad855bdf3e22b7370a893b0c9b874bb63a8fa32a68ddbdaae9be"
+ },
+ "https://www.frbservices.org/resources/resource-centers/same-day-ach-resource-center/fedach-processing-schedule/": {
+  "chars": 13471,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "ed15aa657ed89989fde15f13ecd76ac005abff02c4e7be4a289aa7731c486740"
+ },
+ "https://www.frbservices.org/wp-content/uploads/010526-operating-circular-4.pdf": {
+  "chars": 343754,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "ee649fedc8d039acf0e569a0a6b445c23568d7b7d981fba1d575cda268b1d595"
+ },
+ "https://www.frbservices.org/wp-content/uploads/040126-operating-circular-8.pdf": {
+  "chars": 349269,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "2d3d134ad154af5e2dd1ca9d62f035f2cb54a4a483a48c22f9e70619c36749b4"
+ },
+ "https://www.frbservices.org/wp-content/uploads/042826-fednow-service-operating-procedures.pdf": {
+  "chars": 1214876,
+  "rails": [
+   "fednow"
+  ],
+  "sha256": "704b5952ca582cc7102888486e8bb71628b96b0b93da0ce81db6a3ceea7676bb"
  },
  "https://www.nacha.org/million": {
-  "chars": 9109,
+  "chars": 9006,
   "rails": [
    "ach"
   ],
-  "sha256": "85dd298837dde70049095fe642de71892e4540f5b04fe3b9980dcc43fed3809f"
+  "sha256": "efa7fb000f00f4e099f1c94a937b659231a7f769dead1a7580bdf46367ca6f75"
  },
  "https://www.nacha.org/rules/increasing-same-day-ach-dollar-limit-10-million-0": {
-  "chars": 11216,
+  "chars": 11178,
   "rails": [
    "ach"
   ],
-  "sha256": "eb9009134612dc963bda3efcb3a684a86404cd361bb6a9346201ea1c449a495f"
+  "sha256": "0ac462b20beda6cea6a6fb82e03cebd76dcca9ec9a7aa7e7c14545a8c2b3dc00"
+ },
+ "https://www.theclearinghouse.org/-/media/New/TCH/Documents/Payment-Systems/RTP/RTP-Operating-Rules--Effective-October-4-2026.pdf": {
+  "chars": 325097,
+  "rails": [
+   "rtp"
+  ],
+  "sha256": "bad5df673ff769da54f7c296f93804e31e78c67b2715f823d17480a771983cc8"
  },
  "https://www.theclearinghouse.org/payment-systems/Articles/2024/12/Higher_10_Million_RTP_Network_Transaction_Limit_Empowers_New_Uses_12-04-2024": {
   "chars": 5313,
@@ -77,10 +119,10 @@
   "sha256": "9857dc9b6c04077534eef06794528b06847fd3dd95623b608050998e5d63a15f"
  },
  "https://www.theclearinghouse.org/payment-systems/rtp": {
-  "chars": 7268,
+  "chars": 7278,
   "rails": [
    "rtp"
   ],
-  "sha256": "8179d4f9c686e419d4ce4833e61fca471583e9efffe5928fba1f2f80999fdbf2"
+  "sha256": "d26f8750455a9c523309453842f3aa41fd0e125621fb92dfc163625acbb2b3a8"
  }
 }
