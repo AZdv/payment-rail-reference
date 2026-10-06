@@ -37,12 +37,13 @@ Every fact is a block, and every block carries its own provenance:
 ```yaml
 network_transaction_limit:
   value_usd: 10000000
-  effective_from: 2025-11-12
+  effective_from: 2025-02-09
   supersedes:
     value_usd: 1000000
+    effective_from: 2022-04
   status: verified
-  source: https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase
-  verified_on: 2026-08-07
+  source: https://www.theclearinghouse.org/payment-systems/Articles/2024/12/Higher_10_Million_RTP_Network_Transaction_Limit_Empowers_New_Uses_12-04-2024
+  verified_on: 2026-10-06
 ```
 
 `status` is one of:
