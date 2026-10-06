@@ -55,11 +55,12 @@ facts:
       provided in the FedACH Processing Schedule on the settlement date.
       Paragraph 11.1(b) is the other half. If a Reserve Bank has not received
       actually and finally collected funds for all debit items that settled on
-      the prior banking day by 12:00 p.m. ET, the Reserve Banks may reverse the
-      debits and credits for every debit item that settled in that window, and
-      the circular says they reverse the whole window rather than one item. So
-      the credit leg is final at settlement and the debit leg can be unwound the
-      next morning, together with everything that settled alongside it. What
+      the immediately prior banking day by 12:00 p.m. ET, the Reserve Banks may,
+      by no later than 5:30 p.m. ET that day, reverse the debits and credits for
+      the debit items, and the circular is explicit that they reverse every
+      debit item that settled in the same settlement window rather than the one
+      that failed. So the credit leg is final at settlement, while a settled
+      debit can still be unwound the following banking day, and not alone. What
       recourse an originator or receiver has after settlement is governed by the
       Nacha Operating Rules, whose text is not published, so it is recorded as
       unknown here rather than written down from memory. That missing half is
