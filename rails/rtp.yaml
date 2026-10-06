@@ -38,6 +38,7 @@ facts:
     as_of: 2026-09
     supersedes:
       value: 1322
+      qualifier: "over"
       as_of: 2026-07
     status: verified
     note: >-
@@ -53,28 +54,37 @@ facts:
     final_on_settlement: true
     irrevocable: true
     sender_may_cancel: false
-    receiver_must_return_on_request: false
+    receiver_must_return_on_return_request: false
     return_request_response_deadline_banking_days: 10
+    return_request_deadline_exceptions:
+      - claimed fraud
+      - breach of a Request for Payment warranty
     status: verified
     note: >-
-      The clearest finality record of the four rails, because the operator
-      publishes its rulebook. Rule I.E of the RTP System Operating Rules: the
-      RTP System "enables Participants to initiate credit transfers, receive
-      final and irrevocable settlement for credit transfers, and make available
-      to Receivers funds associated with such credit transfers in real-time".
-      Rule III.E: "A Payment Message cannot be cancelled or amended by a Sending
-      Participant once the Payment Message is sent by the Sending Participant to
-      the RTP System", the single exception being a cancellation by the RTP
-      System itself on a time out. Rule VII.D provides a Request for Return of
-      Funds that a participant may send for any reason, including an
-      unauthorized or erroneous payment, but VII.D.1 is explicit that the
-      Receiving Participant "shall be under no obligation to return funds". It
-      must answer within ten banking days, and may take longer where it is
-      investigating claimed fraud. So the recourse exists as a message and not
-      as a right, which is the whole point for anyone sizing RTP fraud exposure.
-    # The current rules, effective 2026-10-04. This URL names its effective
-    # date, so the next version will 404 this one rather than quietly replacing
-    # the text, and the source checker will say so. Checked against the prior
+      The operator publishes its rulebook, so this is the best documented of the
+      four rails. Rule I.E: the RTP System "enables Participants to initiate
+      credit transfers, receive final and irrevocable settlement for credit
+      transfers, and make available to Receivers funds associated with such
+      credit transfers in real-time". Rule III.E: "A Payment Message cannot be
+      cancelled or amended by a Sending Participant once the Payment Message is
+      sent by the Sending Participant to the RTP System", the single exception
+      being a cancellation by the RTP System itself on a time out.
+      Recourse runs on two separate tracks and they are easy to conflate. Rule
+      VII.D is a Request for Return of Funds, which a participant may send for
+      any reason, and VII.D.1 is explicit that the Receiving Participant "shall
+      be under no obligation to return funds". It must answer within ten banking
+      days, except where the request is sent for claimed fraud or for breach of
+      a Request for Payment warranty, where VII.D.2 allows longer to
+      investigate. Separately, Rule VII.C gives the receiving side a claim it
+      can actually enforce, but only where the payment answered a Request for
+      Payment and that warranty was breached, with a defined claims process and,
+      failing agreement, an arbitration proceeding under VII.C.7. So for an
+      ordinary credit transfer recourse is a request the receiver may decline.
+      An enforceable path exists only behind a Request for Payment.
+    # The current rules, effective 2026-10-04. The URL names its effective date,
+    # so an amendment is published at a new path rather than rewriting this text
+    # underneath us. That does not guarantee this file is ever removed, so the
+    # rules index is worth checking alongside it. Checked against the prior
     # 2022-06-10 version: all three rules carry the same wording, so this is
     # long-standing rather than new.
     source: https://www.theclearinghouse.org/-/media/New/TCH/Documents/Payment-Systems/RTP/RTP-Operating-Rules--Effective-October-4-2026.pdf
