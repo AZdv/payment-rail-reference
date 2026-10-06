@@ -39,6 +39,38 @@ facts:
     source: https://www.frbservices.org/resources/resource-centers/same-day-ach-resource-center/fedach-processing-schedule/
     verified_on: 2026-10-06
 
+  settlement_finality:
+    # Not one question. Interbank settlement of a credit item is final at the
+    # settlement time. The debit leg is not. The entry sitting on top of either
+    # is a third thing again, and collapsing the three is how a design ends up
+    # treating an ACH credit as being as unrecallable as a wire.
+    credit_item_settlement_final: true
+    final_at: settlement time in the FedACH Processing Schedule on the settlement date
+    debit_item_settlement_reversible: true
+    status: verified_partial
+    note: >-
+      Quoted from Operating Circular 4 paragraph 11.2: credit given by the
+      Reserve Bank that holds the receiving bank's settlement account for a
+      credit item "is final and available for use" at the settlement time
+      provided in the FedACH Processing Schedule on the settlement date.
+      Paragraph 11.1(b) is the other half. If a Reserve Bank has not received
+      actually and finally collected funds for all debit items that settled on
+      the prior banking day by 12:00 p.m. ET, the Reserve Banks may reverse the
+      debits and credits for every debit item that settled in that window, and
+      the circular says they reverse the whole window rather than one item. So
+      the credit leg is final at settlement and the debit leg can be unwound the
+      next morning, together with everything that settled alongside it. What
+      recourse an originator or receiver has after settlement is governed by the
+      Nacha Operating Rules, whose text is not published, so it is recorded as
+      unknown here rather than written down from memory. That missing half is
+      why this is verified_partial.
+    # The circular's URL carries its effective date, so an amendment makes this
+    # 404 rather than change underneath us. That is the better failure: the
+    # source checker reports a dead citation, and an amended circular is exactly
+    # the case that needs a human to re-read the paragraph.
+    source: https://www.frbservices.org/wp-content/uploads/010526-operating-circular-4.pdf
+    verified_on: 2026-10-06
+
 gaps:
   - field: standard_ach_transaction_limit
     reason: >-

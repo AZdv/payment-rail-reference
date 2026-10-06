@@ -51,6 +51,34 @@ facts:
     source: https://www.frbservices.org/resources/financial-services/wires/fedwire-services-frequently-asked-questions/fedwire-service-iso-20022-faq/format-faq/
     verified_on: 2026-10-06
 
+  settlement_finality:
+    final_on_settlement: true
+    irrevocable: true
+    operator_will_cancel_on_request: false
+    status: verified
+    note: >-
+      Quoted from the Board: the Federal Reserve Banks provide the Fedwire Funds
+      Service, "a real-time gross settlement system that enables participants to
+      initiate funds transfer that are immediate, final, and irrevocable once
+      processed". Operating Circular 6 section 8.1.4 supplies the recourse half:
+      notwithstanding section 4A-211 of Article 4A a Reserve Bank has no
+      obligation to cancel or amend a payment order even if it receives a
+      request for return, its only obligation is to forward that request, and
+      the participant sending it may itself be liable under 4A-211 unless the
+      request states "NO INDEMNITY". Recovering a mistaken wire is therefore a
+      negotiation between two banks, not an operator function. Read the circular
+      at
+      https://www.frbservices.org/wp-content/uploads/010526-operating-circular-6.pdf
+    # Source caveat worth knowing before leaning on this page for anything else.
+    # It carries the finality sentence but is otherwise old: it still cites a
+    # 2008 participant count, and the Board last updated it on 2024-06-25. The
+    # sentence is used because it describes how the service is designed rather
+    # than reporting a figure, and because the hours it also gives match the
+    # FRFS operating-hours page cited above exactly. Do not take a number off
+    # it without checking FRFS.
+    source: https://www.federalreserve.gov/paymentsystems/fedfunds_about.htm
+    verified_on: 2026-10-06
+
 gaps:
   - field: per_transaction_value_limit
     reason: >-

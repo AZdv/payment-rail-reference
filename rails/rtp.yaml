@@ -48,3 +48,34 @@ facts:
       matters.
     source: https://www.theclearinghouse.org/payment-systems/rtp
     verified_on: 2026-10-06
+
+  settlement_finality:
+    final_on_settlement: true
+    irrevocable: true
+    sender_may_cancel: false
+    receiver_must_return_on_request: false
+    return_request_response_deadline_banking_days: 10
+    status: verified
+    note: >-
+      The clearest finality record of the four rails, because the operator
+      publishes its rulebook. Rule I.E of the RTP System Operating Rules: the
+      RTP System "enables Participants to initiate credit transfers, receive
+      final and irrevocable settlement for credit transfers, and make available
+      to Receivers funds associated with such credit transfers in real-time".
+      Rule III.E: "A Payment Message cannot be cancelled or amended by a Sending
+      Participant once the Payment Message is sent by the Sending Participant to
+      the RTP System", the single exception being a cancellation by the RTP
+      System itself on a time out. Rule VII.D provides a Request for Return of
+      Funds that a participant may send for any reason, including an
+      unauthorized or erroneous payment, but VII.D.1 is explicit that the
+      Receiving Participant "shall be under no obligation to return funds". It
+      must answer within ten banking days, and may take longer where it is
+      investigating claimed fraud. So the recourse exists as a message and not
+      as a right, which is the whole point for anyone sizing RTP fraud exposure.
+    # The current rules, effective 2026-10-04. This URL names its effective
+    # date, so the next version will 404 this one rather than quietly replacing
+    # the text, and the source checker will say so. Checked against the prior
+    # 2022-06-10 version: all three rules carry the same wording, so this is
+    # long-standing rather than new.
+    source: https://www.theclearinghouse.org/-/media/New/TCH/Documents/Payment-Systems/RTP/RTP-Operating-Rules--Effective-October-4-2026.pdf
+    verified_on: 2026-10-06

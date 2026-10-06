@@ -81,6 +81,30 @@ facts:
     source: https://www.frbservices.org/financial-services/fednow-service/iso-20022-why-does-it-matter/
     verified_on: 2026-10-06
 
+  settlement_finality:
+    final_on_settlement: true
+    final_at: the earlier of the FedNow Service recording the debits and credits and sending the Advice of Credit to the receiver
+    operator_will_cancel_on_request: false
+    status: verified
+    note: >-
+      Quoted from Operating Circular 8 section 7.1: "Settlement through the
+      FedNow Service is final at the earlier of the time the FedNow Service
+      records debits and credits in connection with a payment order sent through
+      the FedNow Service and the FedNow Service sends an Advice of Credit to the
+      FedNow Receiver." The same section adds that settlement is final
+      regardless of whether the participant can yet see the entries or balance
+      changes in its Settlement Account, which is the sentence that catches
+      reconciliation logic built around a visible balance. Section 9.8.6 is the
+      recourse half: notwithstanding section 4A-211 of Article 4A a Reserve Bank
+      has no obligation to cancel or amend a payment order even when a
+      participant asks, its only obligation is to forward the request, and
+      whether the request works at all is left to 4A-211 between the two
+      participants. There is no operator-level unwind to design against.
+    # Dated URL, so an amendment 404s rather than changing silently. See the
+    # same note on the ACH settlement_finality block.
+    source: https://www.frbservices.org/wp-content/uploads/040126-operating-circular-8.pdf
+    verified_on: 2026-10-06
+
 gaps:
   - field: participant_count
     reason: >-
