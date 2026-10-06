@@ -41,8 +41,15 @@ facts:
     value: ISO 20022
     migration_completed: 2025-07-14
     status: verified
-    source: https://www.frbservices.org/resources/financial-services/wires/faq/iso-20022/overview-implementation-details
-    verified_on: 2026-08-07
+    # Source replaced 2026-10-06. The previous citation, the Fedwire ISO 20022
+    # FAQ overview and implementation details page, now returns 404 with no
+    # redirect. The 14 July day survives on the FRFS format FAQ, which states
+    # that "the implementation of ISO 20022 on July 14, 2025, enabled Fedwire
+    # Funds Service participants to apply the CPMI data model". The FRFS press
+    # release of 15 July 2025 announces the completed migration but gives no
+    # day, which is why it is not the citation here.
+    source: https://www.frbservices.org/resources/financial-services/wires/fedwire-services-frequently-asked-questions/fedwire-service-iso-20022-faq/format-faq/
+    verified_on: 2026-10-06
 
 gaps:
   - field: per_transaction_value_limit
