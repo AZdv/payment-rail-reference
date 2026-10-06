@@ -8,20 +8,34 @@ facts:
   network_transaction_limit:
     # Customer credit transfers and payment returns.
     value_usd: 10000000
+    customer_credit_transfer_default_usd: 100000
     effective_from: 2025-11-12
     supersedes:
       value_usd: 1000000
+      # The 2025-09-05 press release is now the only live source for the step
+      # up from $1,000,000, and it says only "November 2025".
+      source: https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase/
     participant_may_set_lower: true
     note: >-
       Financial institutions retain flexibility to set lower transaction limits
       based on internal risk parameters. The number that matters for a given
       integration is the sending institution's configured limit, not this one.
-    status: verified
-    # The 2025-09-05 press release announcing this says only "November 2025".
-    # This customer communication is the source that states the day, and the day
-    # is what a dated record is for.
-    source: https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase
-    verified_on: 2026-08-10
+      The Operating Procedures give that configured limit a starting value: the
+      Customer Credit Transfer limit "is defaulted to $100,000", and a
+      participant has to raise it deliberately. A receiving institution that
+      never touched the setting rejects your $150,000 payment on a network whose
+      ceiling is $10,000,000.
+    status: verified_partial
+    # Downgraded from verified on 2026-10-06, and the source replaced. The
+    # $10,000,000 ceiling and the $100,000 default are stated plainly in the
+    # FedNow Service Operating Procedures, section C, Network Limits. The
+    # 2025-11-12 effective day is not stated on any live FRFS page. Its only
+    # source, the FRFS customer communication of 12 November 2025, now returns
+    # 404 and has been removed from the communications index altogether, so it
+    # did not move, it was withdrawn. The day is kept because it was verified
+    # against that page on 2026-08-10, not because it can be checked today.
+    source: https://www.frbservices.org/wp-content/uploads/042826-fednow-service-operating-procedures.pdf
+    verified_on: 2026-10-06
 
   liquidity_management_transfer_limit:
     # Recorded separately because the previous ceiling was NOT the same. Folding
@@ -29,12 +43,22 @@ facts:
     # limit was $1M when it was $2.5M, which is the exact error `supersedes`
     # exists to prevent.
     value_usd: 10000000
+    lmt_default_usd: 2500000
     effective_from: 2025-11-12
     supersedes:
       value_usd: 2500000
-    status: verified
-    source: https://www.frbservices.org/news/communications/111225-fednow-transaction-limit-increase
-    verified_on: 2026-08-10
+    status: verified_partial
+    # Downgraded from verified on 2026-10-06 for the same reason as the block
+    # above: the 12 November 2025 customer communication was withdrawn from
+    # frbservices.org. The $10,000,000 ceiling and the $2,500,000 default are
+    # both stated in the Operating Procedures. The superseded $2,500,000
+    # ceiling and the 2025-11-12 day are not, and there is a trap in what is
+    # left. $2,500,000 is live today as the LMT default and was also the
+    # pre-November ceiling, so anyone re-deriving this from the Operating
+    # Procedures alone could read the default and conclude the supersedes
+    # figure is a mistake. It is not. It just cannot be checked any more.
+    source: https://www.frbservices.org/wp-content/uploads/042826-fednow-service-operating-procedures.pdf
+    verified_on: 2026-10-06
 
   operating_hours:
     value: 24x7x365
