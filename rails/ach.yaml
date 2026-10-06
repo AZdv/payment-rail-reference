@@ -41,12 +41,21 @@ facts:
 
   settlement_finality:
     # Not one question. Interbank settlement of a credit item is final at the
-    # settlement time. The debit leg is not. The entry sitting on top of either
+    # settlement time. A debit item is not. The entry sitting on top of either
     # is a third thing again, and collapsing the three is how a design ends up
-    # treating an ACH credit as being as unrecallable as a wire.
+    # treating an ACH credit as being as unrecallable as a wire. Note these are
+    # credit items and debit items, not two legs of one transfer: both types
+    # generate debits and credits.
+    scope: interbank settlement under Operating Circular 4
     credit_item_settlement_final: true
     final_at: settlement time in the FedACH Processing Schedule on the settlement date
     debit_item_settlement_reversible: true
+    entry_level_recourse:
+      reversing_entry_availability_banking_days: 5
+      # Nested so the key is literally `source:` and the checker's
+      # ^\s*(?:source|searched): regex monitors it. A sibling key such as
+      # recourse_source: is silently skipped.
+      source: https://www.nacha.org/rules/reversals-and-enforcement
     status: verified_partial
     note: >-
       Quoted from Operating Circular 4 paragraph 11.2: credit given by the
@@ -59,16 +68,23 @@ facts:
       by no later than 5:30 p.m. ET that day, reverse the debits and credits for
       the debit items, and the circular is explicit that they reverse every
       debit item that settled in the same settlement window rather than the one
-      that failed. So the credit leg is final at settlement, while a settled
-      debit can still be unwound the following banking day, and not alone. What
-      recourse an originator or receiver has after settlement is governed by the
-      Nacha Operating Rules, whose text is not published, so it is recorded as
-      unknown here rather than written down from memory. That missing half is
-      why this is verified_partial.
-    # The circular's URL carries its effective date, so an amendment makes this
-    # 404 rather than change underneath us. That is the better failure: the
-    # source checker reports a dead citation, and an amended circular is exactly
-    # the case that needs a human to re-read the paragraph.
+      that failed. So a credit item is final at settlement, while a settled
+      debit item can still be unwound the following banking day, and not alone.
+      All of that is interbank settlement under OC 4, which does not establish
+      every EPN or customer-level rule.
+      Entry-level recourse is a separate layer and part of it is public. Nacha
+      states that an Originator or ODFI "must still transmit a Reversal in such
+      time that it is made available to the RDFI within 5 banking days following
+      the Settlement Date of the Erroneous Entry", and that the permissible
+      reasons were expanded to cover wrong-date errors. So a settled ACH credit
+      is final between banks and still reversible as an entry, which is the
+      distinction that matters when someone asks whether ACH is final. What is
+      not public is the full set of post-settlement rights in the Nacha
+      Operating Rules, and that remainder is why this stays verified_partial.
+    # The circular's URL carries its effective date, so an amendment is
+    # published at a new path rather than rewriting this one underneath us. It
+    # does not guarantee this file is ever removed, so the operating circulars
+    # index is worth checking alongside it.
     source: https://www.frbservices.org/wp-content/uploads/010526-operating-circular-4.pdf
     verified_on: 2026-10-06
 
