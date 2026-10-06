@@ -57,4 +57,17 @@ gaps:
       No per-transaction value limit is stated on the public FRFS pages reviewed.
       That is not the same as confirming there is none, so it is recorded as
       unknown rather than as "no limit".
+    narrowed_by: >-
+      Operating Circular 6, which is what actually governs funds transfers
+      through the Fedwire Funds Service, does define a dollar cap, and it is not
+      this one. Appendix B section 1.2.3 defines "Dollar Limit" as "the maximum
+      U.S. dollar amount that a Protracted Outage Participant may instruct a
+      Reserve Bank to pay, or to cause another bank to pay, by sending a
+      Critical Payment Order", and section 3.3 leaves its value to the
+      Protracted Outage Toolkit, which is not published. So the only
+      per-transaction cap the operator's own circular defines for Fedwire
+      applies during a declared outage, and the circular sets none for normal
+      operation. That is an argument from absence rather than a statement, so
+      the gap stands. Read in the 01/05/26 circular at
+      https://www.frbservices.org/wp-content/uploads/010526-operating-circular-6.pdf
     searched: https://www.frbservices.org/financial-services/fedwire-funds-service/

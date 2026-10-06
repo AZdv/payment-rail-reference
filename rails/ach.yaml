@@ -47,10 +47,18 @@ gaps:
       asserted. If you need this for a design decision, read the Nacha Operating
       Rules directly or ask your ODFI in writing.
     narrowed_by: >-
-      Nacha does state, on the page below, that entries over $1,000,000
-      submitted to a same-day window "will not be rejected by the ACH Operator,
-      but will be processed for next-day settlement in the next available
-      processing window". So standard ACH demonstrably accepts entries above the
-      same-day cap. That is short of establishing no limit at all, so the gap
-      stands, but it is the closest primary sentence found.
-    searched: https://www.nacha.org/million
+      Two primary sentences get close without closing it. Nacha, at
+      nacha.org/million, states that entries over $1,000,000 submitted to a
+      same-day window "will not be rejected by the ACH Operator, but will be
+      processed for next-day settlement in the next available processing
+      window". The ACH Operator itself goes further and names a figure: in
+      Example 6 of the FedACH Same Day ACH sample scenarios, linked below, a
+      file carrying a single PPD debit entry for $1,025,500 is processed, and
+      "the debit entry for $1,025,500, however, exceeds the $1,000,000 same day
+      ACH entry limit, so it will settle the next day". So standard ACH
+      demonstrably carries a specific entry above the same-day cap, stated by
+      the operator rather than inferred. Neither sentence establishes that no
+      limit exists, so the gap stands. Quote Example 6 and not Example 1 on
+      that page: Example 1's setup says the large credit is $1,000,000 and its
+      outcome calls the same entry $1,100,000, so it cannot be relied on.
+    searched: https://www.frbservices.org/resources/financial-services/fedach-services-resources/ach-faq/same-day-ach-sample-scenarios-effective-march-18-2022/
