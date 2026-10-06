@@ -34,8 +34,8 @@ facts:
     # FedNow Service Operating Procedures, section C, Network Limits. The
     # 2025-11-12 effective day is not stated on any live FRFS page. Its only
     # source, the FRFS customer communication of 12 November 2025, now returns
-    # 404 and has been removed from the communications index altogether, so it
-    # did not move, it was withdrawn. The day is kept because it was verified
+    # 404 and is absent from the communications index, so it is not reachable at
+    # any path found from there. The day is kept because it was verified
     # against that page on 2026-08-10, not because it can be checked today.
     source: https://www.frbservices.org/wp-content/uploads/042826-fednow-service-operating-procedures.pdf
     verified_on: 2026-10-06
@@ -65,8 +65,17 @@ facts:
 
   operating_hours:
     value: 24x7x365
+    applies_to: funds transfer business day, instant payment messages
+    lmt_processing_hours_et:
+      weekdays: "19:00-07:00"
+      weekends_and_federal_reserve_holidays: 24 hours
     note: >-
-      The instant payment message business day rolls at approximately 7:01 p.m. ET.
+      The instant payment message business day rolls at approximately 7:01 p.m.
+      ET. The 24x7x365 figure is the funds transfer business day and does not
+      carry over to liquidity management transfers, which this file also
+      records limits for: LMT processing runs 19:00 to 07:00 ET on weekdays and
+      round the clock at weekends and on Federal Reserve holidays. Designing an
+      LMT against the headline number is the mistake this field exists to stop.
     status: verified
     # URL updated 2026-10-06; the old /fednow/operating-hours path 301s here.
     source: https://www.frbservices.org/resources/financial-services/fednow-service-resources/fednow-service-operating-hours/
@@ -87,7 +96,8 @@ facts:
   settlement_finality:
     final_on_settlement: true
     final_at: the earlier of the FedNow Service recording the debits and credits and sending the Advice of Credit to the receiver
-    operator_will_cancel_on_request: false
+    operator_obliged_to_cancel_on_request: false
+    operator_obliged_to_forward_accepted_request: true
     status: verified
     note: >-
       Quoted from Operating Circular 8 section 7.1: "Settlement through the
@@ -101,10 +111,14 @@ facts:
       recourse half: notwithstanding section 4A-211 of Article 4A a Reserve Bank
       has no obligation to cancel or amend a payment order even when a
       participant asks, its only obligation is to forward the request, and
-      whether the request works at all is left to 4A-211 between the two
-      participants. There is no operator-level unwind to design against.
-    # Dated URL, so an amendment 404s rather than changing silently. See the
-    # same note on the ACH settlement_finality block.
+      whether the request takes effect is left to 4A-211 between the two
+      participants. So there is no operator-level unwind to rely on, which is
+      not the same as the operator never cancelling: the obligation is absent,
+      not the capability.
+    # Dated URL, so an amendment is published at a new path rather than
+    # rewriting this one underneath us. It does not guarantee this file is ever
+    # removed, so the operating circulars index is worth checking alongside it.
+    # Same note on the ACH settlement_finality block.
     source: https://www.frbservices.org/wp-content/uploads/040126-operating-circular-8.pdf
     verified_on: 2026-10-06
 
