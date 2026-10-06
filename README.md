@@ -28,7 +28,7 @@ One file per rail. Read them directly, they are meant to be legible.
 | FedNow Service | [rails/fednow.yaml](rails/fednow.yaml) | $10,000,000 since 2025-11-12 |
 | RTP Network | [rails/rtp.yaml](rails/rtp.yaml) | $10,000,000 since 2025-02-09 |
 | ACH | [rails/ach.yaml](rails/ach.yaml) | Same Day $1,000,000, rising to $10,000,000 on 2027-09-17 |
-| Fedwire Funds Service | [rails/fedwire.yaml](rails/fedwire.yaml) | not stated on the sources reviewed |
+| Fedwire Funds Service | [rails/fedwire.yaml](rails/fedwire.yaml) | Up to $10,000,000,000, stated to the nearest billion |
 
 ## How to read a fact
 
@@ -61,11 +61,19 @@ Each file has a `gaps` section. Those are fields we could not confirm against a
 primary source, recorded as unknown rather than filled in with the answer
 everyone repeats.
 
-The Fedwire per-transaction limit is the useful example. There probably is not
-one. Plenty of sources say so. But no primary Federal Reserve page we read says
-it, and "widely repeated" is not the same as "stated by the operator", so it sits
-in `gaps` until somebody finds the sentence. Same story for the standard ACH
-per-transaction limit.
+The standard ACH per-transaction limit is the useful example. It is widely
+repeated as "no limit", but no primary Nacha or FRFS page we have read says so,
+and "widely repeated" is not the same as "stated by the operator", so it sits in
+`gaps` until somebody finds the sentence.
+
+The Fedwire limit used to sit there too, and it should not have. A Federal
+Reserve Board release we were **already citing in the same file** says the
+service carries transfers "up to $10 billion". The gap is now the narrower one
+it should always have been: the figure is given to the nearest billion in a
+descriptive sentence, and Operating Circular 6 sets no per-transaction cap for
+normal operation, so the exact maximum and where it is set remain unconfirmed.
+That one was caught in review rather than by us, which is the argument for
+publishing this at all.
 
 This is the part of the repo we would most like corrections on.
 

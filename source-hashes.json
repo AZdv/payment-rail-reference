@@ -20,13 +20,6 @@
   ],
   "sha256": "1945f3eafbbb1666630cc5f796bf7d7b6bf6cd3e94ada74a58550f209ef52682"
  },
- "https://www.frbservices.org/financial-services/fedwire-funds-service/": {
-  "chars": 10886,
-  "rails": [
-   "fedwire"
-  ],
-  "sha256": "4842155206ed0caccfa1ff3ba3d80963ae751d79414727900c9f0051c7ab9710"
- },
  "https://www.frbservices.org/news/press-releases/090525-fednow-transaction-limit-increase/": {
   "chars": 12260,
   "rails": [
@@ -76,6 +69,13 @@
   ],
   "sha256": "ee649fedc8d039acf0e569a0a6b445c23568d7b7d981fba1d575cda268b1d595"
  },
+ "https://www.frbservices.org/wp-content/uploads/010526-operating-circular-6.pdf": {
+  "chars": 934295,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "2f75f5ae9b7d84ac6b195758299eff77f2248f65053e60c55bffdb9cd9bcfa68"
+ },
  "https://www.frbservices.org/wp-content/uploads/040126-operating-circular-8.pdf": {
   "chars": 349269,
   "rails": [
@@ -103,6 +103,13 @@
    "ach"
   ],
   "sha256": "0ac462b20beda6cea6a6fb82e03cebd76dcca9ec9a7aa7e7c14545a8c2b3dc00"
+ },
+ "https://www.nacha.org/rules/reversals-and-enforcement": {
+  "chars": 12977,
+  "rails": [
+   "ach"
+  ],
+  "sha256": "b47dafefbcaf97fdba33e1523e4a50a62a625677e507de4df8aa8e242172b63c"
  },
  "https://www.theclearinghouse.org/-/media/New/TCH/Documents/Payment-Systems/RTP/RTP-Operating-Rules--Effective-October-4-2026.pdf": {
   "chars": 325097,
