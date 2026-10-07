@@ -52,7 +52,7 @@ facts:
       value_usd: 2500000
     status: verified_partial
     # Downgraded from verified on 2026-10-06 for the same reason as the block
-    # above: the 12 November 2025 customer communication was withdrawn from
+    # above: the 12 November 2025 customer communication is no longer reachable on
     # frbservices.org. The $10,000,000 ceiling and the $2,500,000 default are
     # both stated in the Operating Procedures. The superseded $2,500,000
     # ceiling and the 2025-11-12 day are not, and there is a trap in what is

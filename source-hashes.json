@@ -13,6 +13,13 @@
   ],
   "sha256": "2c4b0134747b2e306b05f660c7701677085220020e16653ac99d73afe087cc75"
  },
+ "https://www.frbservices.org/binaries/content/assets/crsocms/financial-services/wires/funds-service-disclosure.pdf": {
+  "chars": 1555690,
+  "rails": [
+   "fedwire"
+  ],
+  "sha256": "0d0e198f57267261156d2bf07552db9c18b57ed7f0e495fe3b10ad81a6e1a4d5"
+ },
  "https://www.frbservices.org/financial-services/fednow-service/iso-20022-why-does-it-matter/": {
   "chars": 13327,
   "rails": [

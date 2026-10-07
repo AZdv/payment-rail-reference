@@ -55,7 +55,7 @@ facts:
     final_on_settlement: true
     irrevocable: true
     operator_obliged_to_cancel_on_request: false
-    operator_obliged_to_forward_request: true
+    operator_obliged_to_forward_request: only if the Reserve Bank accepts the cancellation or amendment message
     status: verified
     note: >-
       Quoted from the Board: the Federal Reserve Banks provide the Fedwire Funds
@@ -64,7 +64,8 @@ facts:
       processed". Operating Circular 6 section 8.1.4 supplies the recourse half:
       notwithstanding section 4A-211 of Article 4A a Reserve Bank has no
       obligation to cancel or amend a payment order even if it receives a
-      request for return, its only obligation is to forward that request, and
+      request for return, and its only obligation to forward arises "if such a Message seeking to
+      cancel or amend a payment order is accepted by a Reserve Bank", and
       the participant sending it may itself be liable under 4A-211 unless the
       request states "NO INDEMNITY". So the operator has no obligation to
       unwind a mistaken wire, which is not the same as saying it never can:
@@ -84,40 +85,21 @@ facts:
     verified_on: 2026-10-06
 
   per_transaction_value_limit:
-    value_usd: 10000000000
-    qualifier: "up to"
-    status: verified_partial
+    value_usd: 9999999999.99
+    status: verified
     note: >-
-      The Board describes the Fedwire Funds Service as one that "allows
-      participating banks and credit unions to send and receive individual
-      electronic funds transfers up to $10 billion". That is a primary source
-      stating a per-transfer bound, so recording this as unknown was wrong.
-      It is verified_partial rather than verified because the sentence is
-      descriptive rather than a rule: it gives the figure to the nearest
-      billion, and Operating Circular 6, which actually governs these
-      transfers, sets no per-transaction cap for normal operation. Treat
-      $10,000,000,000 as the stated ceiling and read the circular before
-      designing against anything finer.
-    source: https://www.federalreserve.gov/newsevents/pressreleases/other20251009a.htm
-    verified_on: 2026-10-06
+      Quoted from the operator's own Fedwire Funds Service disclosure:
+      "Participants can send up to one penny less than $10 billion in a single
+      transaction." So the ceiling is $9,999,999,999.99, stated exactly.
+      Recording the history because it is the better lesson. This field first
+      said no primary source stated any limit, while the file cited a Board
+      release three fields above saying "up to $10 billion". Corrected to that
+      figure, the gap was then narrowed to "the exact maximum is unconfirmed",
+      which was also wrong: the operator publishes it to the cent in its service
+      disclosure. A file whose whole premise is that every value carries its
+      source missed a published value twice.
+    source: https://www.frbservices.org/binaries/content/assets/crsocms/financial-services/wires/funds-service-disclosure.pdf
+    verified_on: 2026-10-07
 
-gaps:
-  - field: per_transaction_value_limit_exact
-    reason: >-
-      The bound itself is no longer unknown. The Board states transfers "up to
-      $10 billion", which is recorded above. What is still unconfirmed is the
-      exact maximum and where it is set: the Board gives it to the nearest
-      billion in a descriptive sentence, and Operating Circular 6, which governs
-      funds transfers through the service, sets no per-transaction cap for
-      normal operation.
-    narrowed_by: >-
-      Operating Circular 6 does define a dollar cap, and it is not this one.
-      Appendix B section 1.2.3 defines "Dollar Limit" as "the maximum U.S.
-      dollar amount that a Protracted Outage Participant may instruct a Reserve
-      Bank to pay, or to cause another bank to pay, by sending a Critical
-      Payment Order", and section 3.3 leaves its value to the Protracted Outage
-      Toolkit, which is not published. So the only per-transaction cap the
-      operator's own circular defines applies during a declared outage. Anyone
-      searching the circular will find that definition and could mistake it for
-      the general one.
-    searched: https://www.frbservices.org/wp-content/uploads/010526-operating-circular-6.pdf
+# No gaps. The per-transaction limit was the only one and it is closed: the
+# operator states it to the cent in the service disclosure cited above.

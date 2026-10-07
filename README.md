@@ -28,7 +28,7 @@ One file per rail. Read them directly, they are meant to be legible.
 | FedNow Service | [rails/fednow.yaml](rails/fednow.yaml) | $10,000,000 since 2025-11-12 |
 | RTP Network | [rails/rtp.yaml](rails/rtp.yaml) | $10,000,000 since 2025-02-09 |
 | ACH | [rails/ach.yaml](rails/ach.yaml) | Same Day $1,000,000, rising to $10,000,000 on 2027-09-17 |
-| Fedwire Funds Service | [rails/fedwire.yaml](rails/fedwire.yaml) | Up to $10,000,000,000, stated to the nearest billion |
+| Fedwire Funds Service | [rails/fedwire.yaml](rails/fedwire.yaml) | $9,999,999,999.99, one penny less than $10bn |
 
 ## How to read a fact
 
@@ -66,16 +66,28 @@ repeated as "no limit", but no primary Nacha or FRFS page we have read says so,
 and "widely repeated" is not the same as "stated by the operator", so it sits in
 `gaps` until somebody finds the sentence.
 
-The Fedwire limit used to sit there too, and it should not have. A Federal
-Reserve Board release we were **already citing in the same file** says the
-service carries transfers "up to $10 billion". The gap is now the narrower one
-it should always have been: the figure is given to the nearest billion in a
-descriptive sentence, and Operating Circular 6 sets no per-transaction cap for
-normal operation, so the exact maximum and where it is set remain unconfirmed.
-That one was caught in review rather than by us, which is the argument for
-publishing this at all.
+The Fedwire limit used to sit there and it should never have. The correction took
+two goes, and both failures are worth publishing. First this file said no primary
+source stated any per-transaction limit, while citing a Federal Reserve Board
+release three fields above that said "up to $10 billion". Corrected to that, the
+gap narrowed to "the exact maximum is unconfirmed". That was wrong too: the
+operator states it to the cent in its own service disclosure, as "up to one penny
+less than $10 billion".
 
-This is the part of the repo we would most like corrections on.
+So a file built on the premise that every value carries its source missed a
+published value twice, and both misses were caught in review rather than by us.
+If you are relying on something here, the `gaps` section is the part to read
+hardest.
+
+## Scope
+
+**This is a sourced reference, not legal or compliance advice.** Values are
+recorded with the URL they came from and the date somebody checked them, and
+nothing here is a statement of anyone's rights or obligations. The governing
+documents are the operators' own rules and circulars and the applicable
+regulations, and they take precedence over anything in this repository. A real
+transaction needs review against the current versions of those documents, not
+against a snapshot in a YAML file.
 
 ## Staleness
 

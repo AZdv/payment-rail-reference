@@ -75,12 +75,18 @@ facts:
       be under no obligation to return funds". It must answer within ten banking
       days, except where the request is sent for claimed fraud or for breach of
       a Request for Payment warranty, where VII.D.2 allows longer to
-      investigate. Separately, Rule VII.C gives the receiving side a claim it
-      can actually enforce, but only where the payment answered a Request for
-      Payment and that warranty was breached, with a defined claims process and,
-      failing agreement, an arbitration proceeding under VII.C.7. So for an
-      ordinary credit transfer recourse is a request the receiver may decline.
-      An enforceable path exists only behind a Request for Payment.
+      investigate. Rule VII.C is a separate mechanism and the roles are easy to
+      invert. Its claimant is the **Message Receiving Participant**, defined in
+      the rules as the participant that receives a Payment-related Message, so
+      in a Request for Payment flow that is the bank which received the request
+      and sent the money, not the bank that received the money. It applies only
+      where a Request for Payment warranty was breached, and it has a defined
+      claims process with an arbitration proceeding under VII.C.7 if the two
+      participants cannot agree.
+      What this does NOT establish is that these two rules are the whole of
+      anyone's recourse. Rules II.H and X.D address other rights and
+      enforcement, and final settlement between banks does not displace
+      consumer protections that may apply to the underlying customer.
     # The current rules, effective 2026-10-04. The URL names its effective date,
     # so an amendment is published at a new path rather than rewriting this text
     # underneath us. That does not guarantee this file is ever removed, so the
